@@ -61,6 +61,8 @@ typings/
 .next
 dist
 
+.firebase
+
 # Editor directories and files
 .idea
 .vscode

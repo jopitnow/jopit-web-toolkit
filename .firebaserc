@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "jopit-334523"
-  }
+    "production": "jopit-334523",
+    "staging": "jopit-staging"
+  },
+  "targets": {},
+  "etags": {}
 }
