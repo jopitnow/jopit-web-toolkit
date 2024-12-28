@@ -1,11 +1,13 @@
 {
-    "extends": "ts-config-single-spa",
     "compilerOptions": {
         "jsx": "react-jsx",
-        "target": "es6",
-        "declarationDir": "dist"
+        "outDir": "./dist",
+        "declaration": true,
+        "declarationMap": true,
+        "moduleResolution": "Node",
+        "target": "es6"
     },
-    "files": ["src/jopit-web-toolkit.tsx"],
+    "files": ["src/index.tsx"],
     "include": ["src/**/*"],
-    "exclude": ["src/**/*.test*"]
+    "exclude": ["node_modules", "src/**/*.test*"]
 }
