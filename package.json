@@ -1,6 +1,6 @@
 {
-    "name": "@jopit/web-toolkit",
-    "version": "1.0.0",
+    "name": "@jopitnow/web-toolkit",
+    "version": "0.0.0",
     "types": "dist/index.d.ts",
     "main": "dist/index.js",
     "description": "Jopit Web Toolkit",
@@ -17,6 +17,9 @@
     "homepage": "https://github.com/jopitnow/jopit-web-toolkit#readme",
     "scripts": {
         "build": "tsc"
+    },
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com/"
     },
     "devDependencies": {
         "@babel/core": "^7.15.0",
