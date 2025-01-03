@@ -1,0 +1,9 @@
+.idea/
+.husky/
+.github/
+src/
+node_modules/
+*.test.*
+tsconfig.json
+.prettierignore
+.eslintrc
