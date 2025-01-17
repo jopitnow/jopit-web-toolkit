@@ -1,9 +1,15 @@
 
-export declare const isString: (v) => v is string;
+function isString(v: unknown): v is string {
+    return typeof v === "string";
+}
 
-export declare const isNumber: (v) => v is number;
+function isNumber(v: unknown): v is number {
+    return typeof v === "number";
+}
 
-export declare const isBoolean: (v) => v is boolean;
+function isBoolean(v: unknown): v is boolean {
+    return typeof v === "boolean";
+}
 
 export function isArray<T>(value: unknown): value is Array<T> {
     return Array.isArray(value);
@@ -19,4 +25,12 @@ export function isNullOrEmpty(value: string | null | undefined): value is "" | n
 
 export function isValidString(value: unknown): value is string {
     return isString(value) && !isNullOrEmpty(value);
+}
+
+export function isValidNumber(value: unknown): value is number {
+    return isNumber(value);
+}
+
+export function isValidBoolean(value: unknown): value is boolean {
+    return isBoolean(value);
 }
