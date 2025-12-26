@@ -10,10 +10,11 @@ export default class FirebaseApplication {
     private _analytics;
     private _storage;
     private constructor();
+    private _onInitAnalytics;
     static init(config: any): Promise<void>;
     static get(): FirebaseApp;
     static getAuth(): Auth;
-    static getAnalytics(): Analytics;
+    static getAnalytics(): Analytics | null;
     static getStorage(): FirebaseStorage;
 }
 //# sourceMappingURL=FirebaseApplication.d.ts.map

@@ -4,7 +4,11 @@
       "Bash(cat:*)",
       "Bash(npm install)",
       "Bash(npm run build:*)",
-      "WebFetch(domain:purge.jsdelivr.net)"
+      "WebFetch(domain:purge.jsdelivr.net)",
+      "WebFetch(domain:cdn.jsdelivr.net)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(curl:*)",
+      "Bash(git rev-parse:*)"
     ]
   }
 }
