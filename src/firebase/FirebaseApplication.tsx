@@ -1,6 +1,7 @@
 import { FirebaseApp, initializeApp } from "firebase/app";
 import { Auth, initializeAuth, browserLocalPersistence } from "firebase/auth";
 import { Analytics, initializeAnalytics } from "firebase/analytics";
+import { FirebaseStorage, getStorage } from "firebase/storage";
 
 export default class FirebaseApplication {
 
@@ -10,11 +11,13 @@ export default class FirebaseApplication {
     private _app: FirebaseApp;
     private _auth: Auth;
     private _analytics: Analytics;
+    private _storage: FirebaseStorage;
 
     private constructor(config) {
         this._app = initializeApp(config);
         this._auth = initializeAuth(this._app, {persistence: browserLocalPersistence});
         this._analytics = initializeAnalytics(this._app);
+        this._storage = getStorage(this._app);
     }
 
     public static init(config): Promise<void> {
@@ -53,5 +56,12 @@ export default class FirebaseApplication {
             throw new Error("You should call init() before getting analytics.")
         }
         return this._instance._analytics;
+    }
+
+    public static getStorage(): FirebaseStorage {
+        if (!this._instance) {
+            throw new Error("You should call init() before getting storage.")
+        }
+        return this._instance._storage;
     }
 }
