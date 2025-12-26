@@ -1,0 +1,1 @@
+{"version":3,"file":"FirebaseApplication.d.ts","sourceRoot":"","sources":["../../src/firebase/FirebaseApplication.tsx"],"names":[],"mappings":"AAAA,OAAO,EAAE,WAAW,EAAiB,MAAM,cAAc,CAAC;AAE1D,MAAM,CAAC,OAAO,OAAO,mBAAmB;IAEpC,OAAO,CAAC,MAAM,CAAC,SAAS,CAAsB;IAE9C,OAAO,CAAC,IAAI,CAAa;IAEzB,OAAO;WAIO,IAAI,CAAC,MAAM,KAAA;WAIX,GAAG,IAAI,WAAW;CAOnC"}
