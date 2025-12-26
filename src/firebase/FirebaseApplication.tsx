@@ -3,6 +3,7 @@ import { FirebaseApp, initializeApp } from "firebase/app";
 export default class FirebaseApplication {
 
     private static _instance: FirebaseApplication;
+    private static _initPromise: Promise<void> | null = null;
 
     private _app: FirebaseApp
 
@@ -10,8 +11,21 @@ export default class FirebaseApplication {
         this._app = initializeApp(config);
     }
 
-    public static init(config) {
-        this._instance = new this(config);
+    public static init(config): Promise<void> {
+        if (this._instance) {
+            return Promise.resolve();
+        }
+
+        if (this._initPromise) {
+            return this._initPromise;
+        }
+
+        this._initPromise = new Promise((resolve) => {
+            this._instance = new this(config);
+            resolve();
+        });
+
+        return this._initPromise;
     }
 
     public static get(): FirebaseApp {
