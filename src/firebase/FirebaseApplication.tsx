@@ -1,5 +1,5 @@
 import { FirebaseApp, initializeApp } from "firebase/app";
-import { Auth, initializeAuth, browserLocalPersistence, updateProfile, signOut, User } from "firebase/auth";
+import { Auth, initializeAuth, browserLocalPersistence, browserPopupRedirectResolver, updateProfile, signOut, User } from "firebase/auth";
 import { Analytics, initializeAnalytics, isSupported } from "firebase/analytics";
 import { FirebaseStorage, getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
@@ -15,7 +15,10 @@ export default class FirebaseApplication {
 
     private constructor(config) {
         this._app = initializeApp(config);
-        this._auth = initializeAuth(this._app, {persistence: browserLocalPersistence});
+        this._auth = initializeAuth(this._app, {
+            persistence: browserLocalPersistence,
+            popupRedirectResolver: browserPopupRedirectResolver
+        });
         this._storage = getStorage(this._app);
     }
 
